@@ -31,7 +31,7 @@ app.get('/', function(req,res) {
 
 //Users Index Page
 app.get('/users', function (req,res) {
-  res.json({ users:users })
+  res.json({ users:users });
 });
 
 //Create User
@@ -54,7 +54,19 @@ app.get('/users/:id', function(req,res){
     return user._id == userId;
   })[0];
   res.json(showUser);
-})
+});
+
+// Update User
+app.put('/users/:id/', function update(req,res){
+  var userId = parseInt(req.params.id);
+  var updateUser = users.filter(function(user){
+    return user._id == userId;
+  })[0];
+  updateUser.username = req.body.username;
+  updateUser.password = req.body.password;
+  updateUser.image_url = req.body.image_url;
+  updateUser.email = req.body.email;
+});
 
 
 // RUN LOCAL SERVER
