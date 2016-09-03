@@ -10,4 +10,4 @@ var User = new Schema({
   email: String
 });
 
-module.exports = mongoose.model('users', User);
+module.exports = mongoose.model('users', User)

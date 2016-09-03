@@ -5,6 +5,13 @@ var mongoose = require('mongoose')
 
 var User = require('./models/user.js');
 
+var users;
+
+// Connect MONGOD db
+mongoose.connect(process.env.DB || 'mongodb://localhost/lastresort_app');
+
+process.on('exit', function() { mongoose.disconnect() }); // Shutdown Mongoose correctly
+
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
@@ -14,10 +21,10 @@ app.set('port', process.env.PORT || 3000);
 
 // DUMMY DATA
 
-var users = [
-  { _id: 1, username: "Mike", password: "asdf", image_url: "", email: "mike@gmail.com"},
-  { _id: 2, username: "Ben", password: "password", image_url: "", email: "ben@gmail.com"}
-];
+// var users = [
+//   { _id: 1, username: "Mike", password: "asdf", image_url: "", email: "mike@gmail.com"},
+//   { _id: 2, username: "Ben", password: "password", image_url: "", email: "ben@gmail.com"}
+// ];
 
 
 
