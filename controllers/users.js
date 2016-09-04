@@ -1,5 +1,9 @@
 var User = require('../models/User');
 
+function getSplash(request,response) {
+  response.sendFile('/../index.html');
+}
+
 // GET
 function getAll(request, response) {
   User.find(function(error, users) {

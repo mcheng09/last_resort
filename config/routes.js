@@ -1,8 +1,11 @@
 var express = require('express'),
+    app = express();
     router = express.Router(),
     bodyParser = require('body-parser')
 
 var usersController = require('../controllers/users');
+
+// User Routes
 
 router.route('/users')
 

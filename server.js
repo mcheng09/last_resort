@@ -25,13 +25,10 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(routes);
 
-
-// //ROUTES
-//
-// //Splash Page
-// app.get('/', function(req,res) {
-//   res.sendFile(__dirname + "/index.html");
-// });
+//Splash Page
+app.get('/', function(req,res) {
+  res.sendFile(__dirname + "/index.html");
+});
 //
 // //Users Index Page
 // app.get('/users', function (req,res) {
