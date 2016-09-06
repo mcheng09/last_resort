@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var path = require('path');
 
 // Connect MONGOD db
 mongoose.connect(process.env.DB || 'mongodb://localhost/lastresort_app');
@@ -16,16 +15,9 @@ app.use(bodyParser.json());
 
 app.set('port', process.env.PORT || 3000);
 
-// DUMMY DATA
-// var users;
-// var users = [
-//   { _id: 1, username: "Mike", password: "asdf", image_url: "", email: "mike@gmail.com"},
-//   { _id: 2, username: "Ben", password: "password", image_url: "", email: "ben@gmail.com"}
-// ];
-
 app.use(routes);
 
-//Splash Page
+// Splash Page
 app.get('/', function(req,res) {
   res.sendFile(__dirname + "/index.html");
 });
@@ -69,7 +61,6 @@ app.put('/users/:id/', function update(req,res){
   updateUser.image_url = req.body.image_url;
   updateUser.email = req.body.email;
 });
-
 
 
 // RUN LOCAL SERVER
