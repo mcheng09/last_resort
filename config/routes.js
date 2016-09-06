@@ -1,5 +1,4 @@
 var express = require('express'),
-    app = express();
     router = express.Router(),
     bodyParser = require('body-parser')
 
@@ -19,7 +18,6 @@ router.route('/users/:id')
   .get(usersController.getUser)
 
   .patch(usersController.updateUser)
-
 
 
 module.exports = router
