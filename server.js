@@ -2,11 +2,15 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var path = require('path');
+var React = require('react');
+var ReactDOM = require('react-dom');
 // Connect MONGOD db
 mongoose.connect(process.env.DB || 'mongodb://localhost/lastresort_app');
 
 process.on('exit', function() { mongoose.disconnect() }); // Shutdown Mongoose correctly
+
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 var routes = require('./config/routes');
 
