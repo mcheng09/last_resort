@@ -3,8 +3,8 @@ console.log("Insanity Check")
 var CommentBox = React.createClass({
   render: function() {
     return (
-      <div className="commentBox">
-        Hello Ben.
+      <div className="title">
+        <h1>This is your last resort.</h1>
       </div>
     );
   }
