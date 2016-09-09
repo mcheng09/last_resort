@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var path = require('path');
 var React = require('react');
 var ReactDOM = require('react-dom');
+
 // Connect MONGOD db
 mongoose.connect(process.env.DB || 'mongodb://localhost/lastresort_app');
 
