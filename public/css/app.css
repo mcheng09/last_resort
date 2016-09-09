@@ -1,7 +1,27 @@
-h1, h3 {
+h2, h3 {
   text-align: center;
+}
+
+body {
+  background: grey;
+}
+
+.navbar {
+  margin-bottom: 0px;
 }
 
 .eventsFrame {
   background: grey;
+}
+
+.card {
+  text-align: center;
+}
+
+.card img {
+  height: 18em;
+}
+
+.title {
+  margin-bottom: 0px;
 }
